@@ -1,9 +1,7 @@
-function transform(arg1, arg2){
-    let result = [];
-    for (let el of arg1) {
-        if (arg2(el)) {
-            result.push(el);
-        }
+function transform(arg) {
+    let result = '';
+    for (let i = arg.length - 1; i >= 0; i--){
+        result += arg[i];
     }
     return result; 
 }
@@ -21,15 +19,8 @@ function transform(arg1, arg2){
 // 
 // 
 // 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-console.log(transform([1, 2, 3, 4], x => x > 1));
-// bonus q: what array method could you use to implement the same functionality? 
+console.log(transform('hello'));
+// Bonus q: what array method could you use to recreate the same result? 
 // 
 // 
 // 
@@ -42,7 +33,8 @@ console.log(transform([1, 2, 3, 4], x => x > 1));
 // 
 // 
 // 
-function transform1(arg1, arg2){
-    return arg1.filter(arg2);
+function transform1(arg){
+    return arg.split('').reduceRight((acc, val) => acc + val);
 }
-// console.log(transform1([1, 2, 3, 4], x => x > 1));
+
+// console.log(transform1('hello'))

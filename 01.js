@@ -1,9 +1,9 @@
-function transform(arg) {
-    let result = '';
-    for (let i = arg.length - 1; i >= 0; i--){
-        result += arg[i];
+function transform(arg1){
+    let result = 0;
+    for (let i = 0; i < arg1.length; i++){
+        result += arg1[i];
     }
-    return result; 
+    return result;
 }
 // 
 // 
@@ -19,8 +19,6 @@ function transform(arg) {
 // 
 // 
 // 
-console.log(transform('hello'));
-// Bonus q: what array method could you use to recreate the same result? 
 // 
 // 
 // 
@@ -33,8 +31,5 @@ console.log(transform('hello'));
 // 
 // 
 // 
-function transform1(arg){
-    return arg.split('').reduceRight((acc, val) => acc + val);
-}
-
-// console.log(transform1('hello'))
+console.log(transform([1,2,3,4]));
+// bonus q: what array method could you use to recreate this functionality? 
